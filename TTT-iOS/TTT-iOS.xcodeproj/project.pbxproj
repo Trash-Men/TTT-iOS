@@ -13,6 +13,9 @@
 		D66A5E24260AFBFC00089F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E22260AFBFC00089F79 /* Main.storyboard */; };
 		D66A5E26260AFBFE00089F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E25260AFBFE00089F79 /* Assets.xcassets */; };
 		D66A5E29260AFBFE00089F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E27260AFBFE00089F79 /* LaunchScreen.storyboard */; };
+		D67F7A6E2611A315005ED022 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A6D2611A315005ED022 /* CameraViewController.swift */; };
+		D67F7A712611A32D005ED022 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A702611A32D005ED022 /* RankViewController.swift */; };
+		D67F7A742611A345005ED022 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A732611A345005ED022 /* ChartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		D66A5E25260AFBFE00089F79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D66A5E28260AFBFE00089F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D66A5E2A260AFBFE00089F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D67F7A6D2611A315005ED022 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		D67F7A702611A32D005ED022 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		D67F7A732611A345005ED022 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				D66A5E1E260AFBFC00089F79 /* SceneDelegate.swift */,
 				D66A5E20260AFBFC00089F79 /* ViewController.swift */,
 				D66A5E22260AFBFC00089F79 /* Main.storyboard */,
+				D67F7A732611A345005ED022 /* ChartViewController.swift */,
+				D67F7A702611A32D005ED022 /* RankViewController.swift */,
+				D67F7A6D2611A315005ED022 /* CameraViewController.swift */,
 				D66A5E25260AFBFE00089F79 /* Assets.xcassets */,
 				D66A5E27260AFBFE00089F79 /* LaunchScreen.storyboard */,
 				D66A5E2A260AFBFE00089F79 /* Info.plist */,
@@ -137,9 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67F7A712611A32D005ED022 /* RankViewController.swift in Sources */,
 				D66A5E21260AFBFC00089F79 /* ViewController.swift in Sources */,
+				D67F7A6E2611A315005ED022 /* CameraViewController.swift in Sources */,
 				D66A5E1D260AFBFC00089F79 /* AppDelegate.swift in Sources */,
 				D66A5E1F260AFBFC00089F79 /* SceneDelegate.swift in Sources */,
+				D67F7A742611A345005ED022 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
