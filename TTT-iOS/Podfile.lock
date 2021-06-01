@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.4.2)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - lottie-ios (3.2.1)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (14.0.0):
+    - Moya/Core
+    - RxSwift (~> 5.0)
+  - RxSwift (5.1.2)
+
+DEPENDENCIES:
+  - Charts
+  - lottie-ios
+  - Moya/RxSwift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - lottie-ios
+    - Moya
+    - RxSwift
+
+SPEC CHECKSUMS:
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  RxSwift: 1e2e1f9570186967f617e49128ed26ccf1bafc8e
+
+PODFILE CHECKSUM: 30cabb390e6700a2c2a11e86a5cd326f8351a043
+
+COCOAPODS: 1.10.0

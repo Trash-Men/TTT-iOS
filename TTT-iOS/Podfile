@@ -6,5 +6,10 @@ target 'TTT-iOS' do
   use_frameworks!
 
   # Pods for TTT-iOS
+  pod 'Charts'
+  pod 'lottie-ios' 
+
+  # Network
+  pod 'Moya/RxSwift'
 
 end

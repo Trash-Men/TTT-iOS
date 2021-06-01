@@ -6,12 +6,14 @@
 //
 
 import UIKit
-import MapKit
 
-let screen = UIScreen.main.bounds
+import MapKit
+import Moya
+import RxSwift
 
 class ViewController: UIViewController {
     var value = true
+    private let disposeBag = DisposeBag()
     
     let menuButton : UIButton = {
         let btn = UIButton()
@@ -21,6 +23,7 @@ class ViewController: UIViewController {
         btn.contentVerticalAlignment = .fill
         btn.contentHorizontalAlignment = .fill
         btn.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        btn.addTarget(self, action: #selector(tabMenu(_:)), for: .touchDown)
         return btn
     }()
     
@@ -32,6 +35,7 @@ class ViewController: UIViewController {
         btn.contentVerticalAlignment = .fill
         btn.contentHorizontalAlignment = .fill
         btn.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        btn.addTarget(self, action: #selector(setCamera), for: .touchDown)
         return btn
     }()
     
@@ -43,7 +47,9 @@ class ViewController: UIViewController {
         btn.contentVerticalAlignment = .fill
         btn.contentHorizontalAlignment = .fill
         btn.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        btn.addTarget(self, action: #selector(chart), for: .touchDown)
         return btn
+        
     }()
     
     let rankBtn: UIButton = {
@@ -54,51 +60,82 @@ class ViewController: UIViewController {
         btn.contentVerticalAlignment = .fill
         btn.contentHorizontalAlignment = .fill
         btn.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        btn.addTarget(self, action: #selector(rank), for: .touchDown)
         return btn
     }()
     
-    let mapView: MKMapView = {
-        let view = MKMapView()
-        return view
-    }()
+    let mapView = MKMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeBtn()
         autolayout()
+        mapSetting()
+        NetworkService.shared.login().subscribe().disposed(by: disposeBag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if UserDefaults.standard.value(forKey: "token") != nil {
+            loadMap()
+        }
     }
 }
 
-extension ViewController {
-    @objc func tabMenu(_ sender: Any) {
-        if value {
-            UIView.animate(withDuration: 0.3) {
-                self.menuButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 4))
-                self.setCameraBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height + 43), width: 60, height: 60)
-                self.chartBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height * 2 + 56), width: 60, height: 60)
-                self.rankBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height * 3 + 69), width: 60, height: 60)
-            }
-        } else {
-            UIView.animate(withDuration: 0.3) {
-                self.menuButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
-                self.setCameraBtn.frame = CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
-                self.chartBtn.frame =  CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
-                self.rankBtn.frame =  CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
-            }
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var view: ImageAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: "imageAnnotation") as? ImageAnnotationView
+        if view == nil {
+            view = ImageAnnotationView(annotation: annotation, reuseIdentifier: "imageAnnotation")
         }
-        value.toggle()
+        
+        let annotation = annotation as! Pin
+        view?.image = annotation.image
+        view?.contentMode = .scaleAspectFit
+        view?.annotation = annotation
+        
+        return view
+    }
+}
+
+
+extension ViewController {
+    func mapSetting() {
+        mapView.delegate = self
+        self.mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(TrashPin.self))
+        self.mapView.register(MKAnnotationView.self, forAnnotationViewWithReuseIdentifier: NSStringFromClass(TrashCanPin.self))
     }
     
-    func makeBtn() {
-        self.view.addSubviews([mapView, rankBtn, chartBtn,setCameraBtn, menuButton])
+    func loadMap() {
+        NetworkService.shared.getTrashes()
+            .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
+            .map { data in
+                data.trashes?.forEach({ info in
+                    let annotation = TrashPin()
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: info.latitude, longitude: info.longitude)
+                    let image = UIImage(data: try! Data(contentsOf: URL(string: imageURL + info.photo_url)!))
+                    annotation.image = image
+                    self.mapView.addAnnotation(annotation)
+                })
+            }.observeOn(MainScheduler.instance)
+            .subscribe().disposed(by: disposeBag)
         
-        menuButton.addTarget(self, action: #selector(tabMenu(_:)), for: .touchDown)
-        setCameraBtn.addTarget(self, action: #selector(setCamera), for: .touchDown)
-        chartBtn.addTarget(self, action: #selector(chart), for: .touchDown)
-        rankBtn.addTarget(self, action: #selector(rank), for: .touchDown)
+        NetworkService.shared.getTrashCans()
+            .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .userInitiated))
+            .map { data in
+                data.trashCans?.forEach({ (info) in
+                    let annotation = TrashCanPin()
+                    annotation.image = UIImage(data: try! Data(contentsOf: URL(string: imageURL + info.photo_url)!))!
+                    annotation.coordinate = CLLocationCoordinate2D(latitude: info.latitude, longitude: info.longitude)
+                    self.mapView.addAnnotation(annotation)
+                })
+            }.observeOn(MainScheduler.instance)
+            .subscribe().disposed(by: disposeBag)
     }
     
     func autolayout() {
+        self.view.addSubviews([mapView, rankBtn, chartBtn,setCameraBtn, menuButton])
+        
         self.mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         mapView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -131,7 +168,7 @@ extension ViewController {
     }
     
     @objc func setCamera() {
-        let vc = storyboard?.instantiateViewController(identifier: "CameraViewController") as! CameraViewController
+        let vc = SelectViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -144,13 +181,23 @@ extension ViewController {
         let vc = storyboard?.instantiateViewController(identifier: "RankViewController") as! RankViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-
-extension UIView {
-    func addSubviews(_ views: [UIView]) {
-        for view in views {
-            self.addSubview(view)
+    
+    @objc func tabMenu(_ sender: Any) {
+        if value {
+            UIView.animate(withDuration: 0.3) {
+                self.menuButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 4))
+                self.setCameraBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height + 43), width: 60, height: 60)
+                self.chartBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height * 2 + 56), width: 60, height: 60)
+                self.rankBtn.frame = CGRect(x: screen.width - (self.menuButton.bounds.minX + 80), y: self.menuButton.frame.midY - (self.menuButton.bounds.height * 3 + 69), width: 60, height: 60)
+            }
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.menuButton.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi / 2))
+                self.setCameraBtn.frame = CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
+                self.chartBtn.frame =  CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
+                self.rankBtn.frame =  CGRect(x: self.menuButton.frame.minX, y: self.menuButton.frame.minY, width: 60, height: 60)
+            }
         }
+        value.toggle()
     }
 }

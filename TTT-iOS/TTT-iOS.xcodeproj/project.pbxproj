@@ -3,33 +3,63 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60E42192637CD2400343BA1 /* TrashPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E42182637CD2400343BA1 /* TrashPin.swift */; };
+		D60E4220263925C700343BA1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60E421F263925C700343BA1 /* NetworkService.swift */; };
 		D66A5E1D260AFBFC00089F79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66A5E1C260AFBFC00089F79 /* AppDelegate.swift */; };
 		D66A5E1F260AFBFC00089F79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66A5E1E260AFBFC00089F79 /* SceneDelegate.swift */; };
-		D66A5E21260AFBFC00089F79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66A5E20260AFBFC00089F79 /* ViewController.swift */; };
+		D66A5E21260AFBFC00089F79 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66A5E20260AFBFC00089F79 /* MainViewController.swift */; };
 		D66A5E24260AFBFC00089F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E22260AFBFC00089F79 /* Main.storyboard */; };
 		D66A5E26260AFBFE00089F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E25260AFBFE00089F79 /* Assets.xcassets */; };
 		D66A5E29260AFBFE00089F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66A5E27260AFBFE00089F79 /* LaunchScreen.storyboard */; };
 		D67F7A6E2611A315005ED022 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A6D2611A315005ED022 /* CameraViewController.swift */; };
-		D67F7A712611A32D005ED022 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A702611A32D005ED022 /* RankViewController.swift */; };
 		D67F7A742611A345005ED022 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F7A732611A345005ED022 /* ChartViewController.swift */; };
+		D68A7600261D714400463C66 /* TTTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68A75FF261D714400463C66 /* TTTAPI.swift */; };
+		D6902D082623DEE500A05CFB /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6902D072623DEE500A05CFB /* SelectViewController.swift */; };
+		D6AFFE1F2651FEBD002D32A9 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFFE1E2651FEBD002D32A9 /* Dictionary.swift */; };
+		D6AFFE212651FF27002D32A9 /* RankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6AFFE202651FF27002D32A9 /* RankCell.swift */; };
+		D6CED3A92629A0CD00620C2C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CED3A82629A0CD00620C2C /* LoginModel.swift */; };
+		D6CED3AF2629A13200620C2C /* UploadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6CED3AE2629A13200620C2C /* UploadImage.swift */; };
+		D6E19B13263BF4C80086F9A6 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E19B12263BF4C80086F9A6 /* AnimationViewController.swift */; };
+		D6E19B27263CED200086F9A6 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E19B26263CED200086F9A6 /* RankViewController.swift */; };
+		D6E19B2B263CF9840086F9A6 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E19B2A263CF9840086F9A6 /* UIView.swift */; };
+		D6E19B2F263CF98C0086F9A6 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E19B2E263CF98C0086F9A6 /* UIColor.swift */; };
+		D6F3A255265ACBA3002AE782 /* UIFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F3A254265ACBA3002AE782 /* UIFrame.swift */; };
+		D6F3C645262EA60C00A5C5D3 /* GetInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F3C644262EA60C00A5C5D3 /* GetInfoModel.swift */; };
+		FAC00C50F85BD1D8F15B714B /* Pods_TTT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FEC704F21CEE0A750E004D /* Pods_TTT_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EEB0AB1CAA48582D9099F65 /* Pods-TTT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTT-iOS.release.xcconfig"; path = "Target Support Files/Pods-TTT-iOS/Pods-TTT-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		3897FB22B5D6879672EA6BC2 /* Pods-TTT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTT-iOS.debug.xcconfig"; path = "Target Support Files/Pods-TTT-iOS/Pods-TTT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A6FEC704F21CEE0A750E004D /* Pods_TTT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TTT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D60E42182637CD2400343BA1 /* TrashPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashPin.swift; sourceTree = "<group>"; };
+		D60E421F263925C700343BA1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		D66A5E19260AFBFC00089F79 /* TTT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TTT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D66A5E1C260AFBFC00089F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D66A5E1E260AFBFC00089F79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D66A5E20260AFBFC00089F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D66A5E20260AFBFC00089F79 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D66A5E23260AFBFC00089F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D66A5E25260AFBFE00089F79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D66A5E28260AFBFE00089F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D66A5E2A260AFBFE00089F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D67F7A6D2611A315005ED022 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		D67F7A702611A32D005ED022 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
 		D67F7A732611A345005ED022 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		D68A75FF261D714400463C66 /* TTTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTTAPI.swift; sourceTree = "<group>"; };
+		D6902D072623DEE500A05CFB /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
+		D6AFFE1E2651FEBD002D32A9 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		D6AFFE202651FF27002D32A9 /* RankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCell.swift; sourceTree = "<group>"; };
+		D6CED3A82629A0CD00620C2C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		D6CED3AE2629A13200620C2C /* UploadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImage.swift; sourceTree = "<group>"; };
+		D6E19B12263BF4C80086F9A6 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		D6E19B26263CED200086F9A6 /* RankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		D6E19B2A263CF9840086F9A6 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D6E19B2E263CF98C0086F9A6 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D6F3A254265ACBA3002AE782 /* UIFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFrame.swift; sourceTree = "<group>"; };
+		D6F3C644262EA60C00A5C5D3 /* GetInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +67,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC00C50F85BD1D8F15B714B /* Pods_TTT_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60CC40F2E8C8B0B0A0BAB695 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6FEC704F21CEE0A750E004D /* Pods_TTT_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		939171FD4730FE790B3AD18E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3897FB22B5D6879672EA6BC2 /* Pods-TTT-iOS.debug.xcconfig */,
+				2EEB0AB1CAA48582D9099F65 /* Pods-TTT-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D6341185263F895F00412726 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D66A5E1C260AFBFC00089F79 /* AppDelegate.swift */,
+				D66A5E1E260AFBFC00089F79 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D66A5E10260AFBFC00089F79 = {
 			isa = PBXGroup;
 			children = (
+				D6F3C647262EDFE700A5C5D3 /* TTT-iOSDependencyInjection */,
 				D66A5E1B260AFBFC00089F79 /* TTT-iOS */,
 				D66A5E1A260AFBFC00089F79 /* Products */,
+				939171FD4730FE790B3AD18E /* Pods */,
+				60CC40F2E8C8B0B0A0BAB695 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +122,93 @@
 		D66A5E1B260AFBFC00089F79 /* TTT-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D66A5E1C260AFBFC00089F79 /* AppDelegate.swift */,
-				D66A5E1E260AFBFC00089F79 /* SceneDelegate.swift */,
-				D66A5E20260AFBFC00089F79 /* ViewController.swift */,
-				D66A5E22260AFBFC00089F79 /* Main.storyboard */,
-				D67F7A732611A345005ED022 /* ChartViewController.swift */,
-				D67F7A702611A32D005ED022 /* RankViewController.swift */,
-				D67F7A6D2611A315005ED022 /* CameraViewController.swift */,
-				D66A5E25260AFBFE00089F79 /* Assets.xcassets */,
-				D66A5E27260AFBFE00089F79 /* LaunchScreen.storyboard */,
 				D66A5E2A260AFBFE00089F79 /* Info.plist */,
+				D68A75F9261D70C400463C66 /* Source */,
+				D68A75FB261D70D800463C66 /* Resource */,
+				D6CED3AB2629A0D300620C2C /* Model */,
 			);
 			path = "TTT-iOS";
+			sourceTree = "<group>";
+		};
+		D68A75F5261D709D00463C66 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D66A5E22260AFBFC00089F79 /* Main.storyboard */,
+				D66A5E27260AFBFE00089F79 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D68A75F7261D70B000463C66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D66A5E20260AFBFC00089F79 /* MainViewController.swift */,
+				D60E42182637CD2400343BA1 /* TrashPin.swift */,
+				D6902D072623DEE500A05CFB /* SelectViewController.swift */,
+				D67F7A732611A345005ED022 /* ChartViewController.swift */,
+				D67F7A6D2611A315005ED022 /* CameraViewController.swift */,
+				D6E19B12263BF4C80086F9A6 /* AnimationViewController.swift */,
+				D6E19B26263CED200086F9A6 /* RankViewController.swift */,
+				D6AFFE202651FF27002D32A9 /* RankCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D68A75F9261D70C400463C66 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D6E19B29263CF9730086F9A6 /* Extension */,
+				D68A75FE261D713300463C66 /* Network */,
+				D6341185263F895F00412726 /* App */,
+				D68A75F7261D70B000463C66 /* View */,
+				D68A75F5261D709D00463C66 /* Base */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D68A75FB261D70D800463C66 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D66A5E25260AFBFE00089F79 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D68A75FE261D713300463C66 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D68A75FF261D714400463C66 /* TTTAPI.swift */,
+				D60E421F263925C700343BA1 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D6CED3AB2629A0D300620C2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6CED3A82629A0CD00620C2C /* LoginModel.swift */,
+				D6CED3AE2629A13200620C2C /* UploadImage.swift */,
+				D6F3C644262EA60C00A5C5D3 /* GetInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6E19B29263CF9730086F9A6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D6E19B2A263CF9840086F9A6 /* UIView.swift */,
+				D6E19B2E263CF98C0086F9A6 /* UIColor.swift */,
+				D6AFFE1E2651FEBD002D32A9 /* Dictionary.swift */,
+				D6F3A254265ACBA3002AE782 /* UIFrame.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D6F3C647262EDFE700A5C5D3 /* TTT-iOSDependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TTT-iOSDependencyInjection";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +218,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D66A5E2D260AFBFE00089F79 /* Build configuration list for PBXNativeTarget "TTT-iOS" */;
 			buildPhases = (
+				9BE3D8F599504BA626BB5858 /* [CP] Check Pods Manifest.lock */,
 				D66A5E15260AFBFC00089F79 /* Sources */,
 				D66A5E16260AFBFC00089F79 /* Frameworks */,
 				D66A5E17260AFBFC00089F79 /* Resources */,
+				7BF8695BF962197E2591CEF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,16 +278,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7BF8695BF962197E2591CEF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTT-iOS/Pods-TTT-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TTT-iOS/Pods-TTT-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TTT-iOS/Pods-TTT-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BE3D8F599504BA626BB5858 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TTT-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D66A5E15260AFBFC00089F79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D67F7A712611A32D005ED022 /* RankViewController.swift in Sources */,
-				D66A5E21260AFBFC00089F79 /* ViewController.swift in Sources */,
+				D66A5E21260AFBFC00089F79 /* MainViewController.swift in Sources */,
+				D6CED3AF2629A13200620C2C /* UploadImage.swift in Sources */,
+				D6E19B27263CED200086F9A6 /* RankViewController.swift in Sources */,
+				D6F3A255265ACBA3002AE782 /* UIFrame.swift in Sources */,
+				D68A7600261D714400463C66 /* TTTAPI.swift in Sources */,
 				D67F7A6E2611A315005ED022 /* CameraViewController.swift in Sources */,
+				D6AFFE1F2651FEBD002D32A9 /* Dictionary.swift in Sources */,
+				D6E19B2F263CF98C0086F9A6 /* UIColor.swift in Sources */,
+				D6CED3A92629A0CD00620C2C /* LoginModel.swift in Sources */,
+				D60E42192637CD2400343BA1 /* TrashPin.swift in Sources */,
+				D6902D082623DEE500A05CFB /* SelectViewController.swift in Sources */,
+				D6AFFE212651FF27002D32A9 /* RankCell.swift in Sources */,
+				D6F3C645262EA60C00A5C5D3 /* GetInfoModel.swift in Sources */,
+				D6E19B13263BF4C80086F9A6 /* AnimationViewController.swift in Sources */,
+				D6E19B2B263CF9840086F9A6 /* UIView.swift in Sources */,
 				D66A5E1D260AFBFC00089F79 /* AppDelegate.swift in Sources */,
 				D66A5E1F260AFBFC00089F79 /* SceneDelegate.swift in Sources */,
+				D60E4220263925C700343BA1 /* NetworkService.swift in Sources */,
 				D67F7A742611A345005ED022 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +487,7 @@
 		};
 		D66A5E2E260AFBFE00089F79 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3897FB22B5D6879672EA6BC2 /* Pods-TTT-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +507,7 @@
 		};
 		D66A5E2F260AFBFE00089F79 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EEB0AB1CAA48582D9099F65 /* Pods-TTT-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
